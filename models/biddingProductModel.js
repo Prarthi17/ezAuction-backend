@@ -4,17 +4,17 @@ const BiddingProductSchema = mongoose.Schema(
   {
     user: {
       type: mongoose.Schema.Types.ObjectId,
-      require: true,
+      required: true,
       ref: "User",
     },
     product: {
       type: mongoose.Schema.Types.ObjectId,
-      require: true,
+      required: true,
       ref: "Product",
     },
     price: {
       type: Number,
-      require: [true, "Please add a Price"],
+      required: [true, "Please add a Price"],
     },
   },
   { timestamps: true }

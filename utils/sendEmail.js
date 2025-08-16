@@ -1,8 +1,8 @@
 const nodemailer = require("nodemailer");
 
 const sendEmail = async (options) => {
-  if (!options.email) {
-    throw new Error("No recipients defined");
+  if (!options.email || !options.subject || !options.message) {
+    throw new Error("Email, subject, and message are required");
   }
   const transport = nodemailer.createTransport({
     host: process.env.SMPT_HOST,
@@ -14,12 +14,17 @@ const sendEmail = async (options) => {
   });
 
   const message = {
-    from: `${process.env.SMPT_FROM_NAME} <${process.env.SMPT_FROM_EMAIL}> `,
+    from: `${process.env.SMPT_FROM_NAME} <${process.env.SMPT_FROM_EMAIL}>`,
     to: options.email,
     subject: options.subject,
     text: options.message,
+    html: options.html || undefined,
   };
 
-  await transport.sendMail(message);
+  try {
+    await transport.sendMail(message);
+  } catch (err) {
+    throw new Error("Failed to send email: " + err.message);
+  }
 };
 module.exports = sendEmail;

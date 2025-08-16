@@ -5,6 +5,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const path = require("path");
 const cookieParser = require("cookie-parser");
+const helmet = require("helmet");
+const morgan = require("morgan");
+const rateLimit = require("express-rate-limit");
 
 const userRoute = require("./routes/userRoute");
 const productRoute = require("./routes/productRoute");
@@ -15,6 +18,16 @@ const errorHandler = require("./middleware/errorMiddleware");
 // const User = require("./models/userModel");
 
 const app = express();
+
+// Security Middlewares
+app.use(helmet());
+app.use(morgan("dev"));
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP, please try again later."
+});
+app.use(limiter);
 
 //middlewareswe
 app.use(express.json());
