@@ -1,0 +1,106 @@
+/* Make entire page background black */
+body {
+  background-color: #000; /* black */
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Center the form container vertically and horizontally */
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  background-color: #000; /* dark background */
+  color: #fff; /* text color white */
+}
+
+/* Form heading */
+.auth-container h2 {
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* Form styling */
+.auth-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Input styling */
+.auth-container input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #111; /* input dark background */
+  color: #fff; /* input text white */
+}
+
+.auth-container input::placeholder {
+  color: #aaa; /* placeholder color */
+}
+
+/* Button styling */
+.auth-container button {
+  padding: 12px;
+  border: none;
+  background-color: #A78BFA; /* purple-400 */
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.auth-container button:hover {
+  background-color: #9333ea; /* darker purple on hover */
+}
+
+/* Links and paragraph */
+.auth-container p {
+  margin-top: 15px;
+  color: #ccc;
+}
+
+.auth-container a {
+  color: #A78BFA;
+  text-decoration: none;
+}
+
+.auth-container a:hover {
+  text-decoration: underline;
+}
+
+/* Center the form container vertically and horizontally */
+.auth-container {
+  max-width: 400px;
+  margin: 80px auto;
+  padding: 30px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #000; /* dark background */
+  color: #fff; /* text color white */
+  
+  /* Subtle white border glow */
+  border: 1px solid #fff; /* thinner white border */
+  box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.3); /* lighter glow */
+}
+/* Style for select dropdown */
+.auth-container select {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #555;
+  background-color: #111;
+  color: #fff;
+  font-size: 16px;
+}
+
+/* Style for dropdown options */
+.auth-container select option {
+  background-color: #111; /* dark background for options */
+  color: #fff;            /* white text */
+}
+    
